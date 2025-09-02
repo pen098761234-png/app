@@ -1,6 +1,4 @@
 aiohttp
-aiofiles
 beautifulsoup4
+aiofiles
 playwright
-lxml
-requests
