@@ -633,10 +633,12 @@ def main():
     print("=" * 70)
     print("Prerequisites: pip install aiohttp beautifulsoup4 aiofiles playwright")
     print("Then run:      playwright install chromium")
-    print("Open your browser and navigate to http://localhost:8080")
+    print("Open your browser and navigate to http://localhost:PORT (PORT env var)")
     print("=" * 70)
     
-    web.run_app(server.app, host='localhost', port=8080)
+    host = os.environ.get('HOST', '0.0.0.0')
+    port = int(os.environ.get('PORT', '8080'))
+    web.run_app(server.app, host=host, port=port)
 
 if __name__ == '__main__':
     main()
